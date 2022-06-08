@@ -40,4 +40,15 @@ public class CameraService {
 	public CameraDTO CameraByID(Long Id) throws Exception {
 		return this.mapToDTO(this.repo.findById(Id).orElseThrow(Exception::new));
 	}
+	
+	//UPDATE
+	public CameraDTO update(Long ID, Camera camera) throws Exception{
+		Camera exists = this.repo.findById(Id).orElseThrow(Exception::new);
+		exists.setBrand(camera.getBrand());
+		exists.setId(camera.getId());
+		exists.setType(camera.getType());
+		exists.setMount(camera.getMount());
+		return this.mapToDTO(this.repo.saveAndFlush(exists));
+	}
+	
 }
