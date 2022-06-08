@@ -51,4 +51,10 @@ public class CameraService {
 		return this.mapToDTO(this.repo.saveAndFlush(exists));
 	}
 	
+	//DELETE
+	public boolean delete(Long Id) throws Exception{
+		this.repo.findById(Id).orElseThrow(Exception::new);
+		this.repo.deleteById(Id);
+		return !this.repo.existsById(Id);
+	}
 }
