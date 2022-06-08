@@ -10,6 +10,8 @@ import src.main.java.com.qa.camera.persistance.DTO.CameraDTO;
 import src.main.java.com.qa.camera.persistance.domain.Camera;
 import src.main.java.com.qa.camera.persistance.repo.CameraRepo;
 
+
+@Service 
 public class CameraService {
 
 	private ModelMapper mapper;
@@ -29,4 +31,13 @@ public class CameraService {
 		return this.mapToDTO(this.repo.save(camera));
 	}
 
+	//READ
+	public List<CameraDTO> getAllCamera() {
+		return this.repo.findAll().stream().map(this::mapToDTO).collect(Collectors.toList());
+	}
+	
+	//READ BY ID
+	public CameraDTO CameraByID(Long Id) throws Exception {
+		return this.mapToDTO(this.repo.findById(Id).orElseThrow(Exception::new));
+	}
 }

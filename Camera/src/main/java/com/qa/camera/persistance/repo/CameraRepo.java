@@ -6,10 +6,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-
-import src.main.java.com.qa.camera.persistance.domain.*;
+import src.main.java.com.qa.camera.persistance.domain.Camera;
 
 @Repository
-public class CameraRepo extends JpaRepository<Camera, Long> {
+public interface CameraRepo extends JpaRepository<Camera, Long> {
 
 }
