@@ -12,54 +12,55 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import com.qa.camera.persistance.DTO.LensDTO;
-import com.qa.camera.persistance.domain.Lens;
-import com.qa.camera.service.LensService;
+import com.qa.camera.persistance.DTO.CameraDTO;
+import com.qa.camera.persistance.domain.Camera;
+import com.qa.camera.service.CameraService;
 
 @Controller
-public class LensController {
+public class CameraController {
 
-	private LensService service;
+	private CameraService service;
 
 	@Autowired
-	public LensController(LensService service) {
+	public CameraController(CameraService service) {
 		this.service = service;
 	}
 
 	// A HOME PAGE --- CAN BE EDITED TO LOOK COOL --- WORKS
-	@GetMapping("/homeLens")
+	@GetMapping("/home")
 	public String home() {
 		return "home.html";
 	}
 
 	// CREATE
-	@PostMapping("/createLens")
-	public LensDTO create(@RequestBody Lens Lens) {
-		return this.service.create(Lens);
+	@PostMapping("/create")
+	public CameraDTO create(@RequestBody Camera Camera) {
+		return this.service.create(Camera);
 	}
 
 	// READ
-	@GetMapping("/readLens")
-	public List<LensDTO> read() {
-		return this.service.getAllLens();
+	@GetMapping("/read")
+	public List<CameraDTO> read() {
+		return this.service.getAllCamera();
 	}
 
 	// READ BY ID
-	@GetMapping("/readLens/{id}")
-	public LensDTO readID(@PathVariable Long Id) throws Exception {
-		return this.service.LensByID(Id);
+	@GetMapping("/read/{id}")
+	public CameraDTO readID(@PathVariable Long Id) throws Exception {
+		return this.service.CameraByID(Id);
 	}
 
 	// UPDATE
-	@PutMapping("/updateLens/{id}")
-	public LensDTO update(@PathVariable Long id, @RequestBody Lens Lens) throws Exception {
-		return this.service.update(id, Lens);
+	@PutMapping("/update/{id}")
+	public CameraDTO update(@PathVariable Long id, @RequestBody Camera Camera) throws Exception {
+		return this.service.update(id, Camera);
 	}
 
 	// DELETE
-	@DeleteMapping("/deleteLens/{id}")
+	@DeleteMapping("/delete/{id}")
 	public ResponseEntity<Boolean> delete(@PathVariable Long id) throws Exception {
 
 		return new ResponseEntity<Boolean>(this.service.delete(id), HttpStatus.NO_CONTENT);
 	}
+
 }

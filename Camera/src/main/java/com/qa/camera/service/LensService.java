@@ -12,10 +12,12 @@ import com.qa.camera.persistance.repo.LensRepo;
 
 @Service
 public class LensService {
+	
 	private ModelMapper mapper;
 	private LensRepo repo;
 
 	public LensService(LensRepo repo, ModelMapper mapper) {
+		super();
 		this.repo = repo;
 		this.mapper = mapper;
 	}

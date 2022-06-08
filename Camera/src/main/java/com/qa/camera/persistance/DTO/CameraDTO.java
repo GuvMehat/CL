@@ -1,4 +1,4 @@
-package src.main.java.com.qa.camera.persistance.DTO;
+package com.qa.camera.persistance.DTO;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

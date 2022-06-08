@@ -1,4 +1,4 @@
-package src.main.java.com.qa.camera.exception;
+package com.qa.camera.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

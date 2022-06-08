@@ -1,4 +1,4 @@
-package src.main.java.com.qa.camera.service;
+package com.qa.camera.service;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -6,9 +6,9 @@ import java.util.stream.Collectors;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
-import src.main.java.com.qa.camera.persistance.DTO.CameraDTO;
-import src.main.java.com.qa.camera.persistance.domain.Camera;
-import src.main.java.com.qa.camera.persistance.repo.CameraRepo;
+import com.qa.camera.persistance.DTO.CameraDTO;
+import com.qa.camera.persistance.domain.Camera;
+import com.qa.camera.persistance.repo.CameraRepo;
 
 
 @Service 
@@ -43,7 +43,7 @@ public class CameraService {
 	
 	//UPDATE
 	public CameraDTO update(Long ID, Camera camera) throws Exception{
-		Camera exists = this.repo.findById(Id).orElseThrow(Exception::new);
+		Camera exists = this.repo.findById(ID).orElseThrow(Exception::new);
 		exists.setBrand(camera.getBrand());
 		exists.setId(camera.getId());
 		exists.setType(camera.getType());

@@ -1,4 +1,4 @@
-package src.main.java.com.qa.camera.config;
+package com.qa.camera.config;
 
 import java.time.LocalTime;
 
