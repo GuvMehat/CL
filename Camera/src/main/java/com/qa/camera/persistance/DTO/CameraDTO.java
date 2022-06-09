@@ -14,4 +14,8 @@ public class CameraDTO {
 	private int Type;
 
 	private int Mount;
+	
+	
+	
+	
 }

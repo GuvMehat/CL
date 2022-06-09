@@ -11,14 +11,22 @@ public class Camera {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
-
+	private Long id;
 	private String Brand;
-
 	private int Type;
-
 	private int Mount;
 
+	public Camera() {}
+	
+	public Camera(Long id, String Brand, int Type, int Mount) {
+		super();
+		this.id=id;
+		this.Brand=Brand;
+		this.Type=Type;
+		this.Mount=Mount;
+	}
+	
+	
 	public long getId() {
 		return id;
 	}

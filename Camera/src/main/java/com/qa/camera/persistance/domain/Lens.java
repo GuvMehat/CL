@@ -20,6 +20,16 @@ public class Lens {
 
 	private String Brand;
 
+	
+	public Lens(long id, int mount, long fstop, int range, String brand) {
+		super();
+		this.id = id;
+		Mount = mount;
+		Fstop = fstop;
+		Range = range;
+		Brand = brand;
+	}
+
 	public long getId() {
 		return id;
 	}

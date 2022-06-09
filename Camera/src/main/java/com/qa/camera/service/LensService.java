@@ -22,33 +22,33 @@ public class LensService {
 		this.mapper = mapper;
 	}
 
-	private LensDTO mapToDTO(Lens lens) {
-		return this.mapper.map(lens, LensDTO.class);
-	}
+//	private LensDTO mapToDTO(Lens lens) {
+//		return this.mapper.map(lens, LensDTO.class);
+//	}
 
 	// CREATE
-	public LensDTO create(Lens lens) {
-		return this.mapToDTO(this.repo.save(lens));
+	public Lens create(Lens lens) {
+		return this.repo.save(lens);
 	}
 
 	// READ
-	public List<LensDTO> getAllLens() {
-		return this.repo.findAll().stream().map(this::mapToDTO).collect(Collectors.toList());
+	public List<Lens> getAllLens() {
+		return this.repo.findAll();
 	}
 
 	// READ BY ID
-	public LensDTO LensByID(Long Id) throws Exception {
-		return this.mapToDTO(this.repo.findById(Id).orElseThrow(Exception::new));
+	public Lens LensByID(Long Id) throws Exception {
+		return this.repo.findById(Id).orElseThrow(Exception::new);
 	}
 
 	// UPDATE
-	public LensDTO update(Long ID, Lens lens) throws Exception {
+	public Lens update(Long ID, Lens lens) throws Exception {
 		Lens exists = this.repo.findById(ID).orElseThrow(Exception::new);
 		exists.setBrand(lens.getBrand());
 		exists.setId(lens.getId());
 		exists.setFstop(lens.getFstop());
 		exists.setMount(lens.getMount());
-		return this.mapToDTO(this.repo.saveAndFlush(exists));
+		return this.repo.saveAndFlush(exists));
 	}
 
 	// DELETE
