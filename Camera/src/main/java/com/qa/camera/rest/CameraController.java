@@ -51,14 +51,14 @@ public class CameraController {
 
 	// READ BY ID
 	@GetMapping("/read/{id}")
-	public Camera readID(@PathVariable Long Id) throws Exception {
-		return this.service.CameraByID(Id);
+	public ResponseEntity<Camera> readID(@PathVariable Long Id) throws Exception {
+		return new ResponseEntity<>(this.service.CameraByID(Id), HttpStatus.OK);
 	}
 
 	// UPDATE
 	@PutMapping("/update/{id}")
 	public  ResponseEntity<Camera> update(@PathVariable Long id, @RequestBody Camera Camera) throws Exception {
-		return new ResponseEntity<>(this.service.update(id, Camera), HttpStatus.OK);
+		return new ResponseEntity<>(this.service.update(id, Camera), HttpStatus.ACCEPTED);
 	}
 
 	// DELETE
