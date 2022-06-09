@@ -50,14 +50,14 @@ public class LensController {
 
 	// READ BY ID
 	@GetMapping("/read/{id}")
-	public Lens readID(@PathVariable Long Id) throws Exception {
-		return this.service.LensByID(Id);
+	public ResponseEntity<Lens> readID(@PathVariable Long Id) throws Exception {
+		return new ResponseEntity<>(this.service.LensByID(Id), HttpStatus.OK);
 	}
 
 	// UPDATE
 	@PutMapping("/update/{id}")
 	public ResponseEntity<Lens> update(@PathVariable Long id, @RequestBody Lens Lens) throws Exception {
-		return new ResponseEntity<>(this.service.update(id, Lens), HttpStatus.OK);
+		return new ResponseEntity<>(this.service.update(id, Lens), HttpStatus.ACCEPTED);
 	}
 
 	// DELETE
