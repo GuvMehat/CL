@@ -44,11 +44,12 @@ public class LensService {
 	// UPDATE
 	public Lens update(Long ID, Lens lens) throws Exception {
 		Lens exists = this.repo.findById(ID).orElseThrow(Exception::new);
-		exists.setBrand(lens.getBrand());
 		exists.setId(lens.getId());
-		exists.setFstop(lens.getFstop());
 		exists.setMount(lens.getMount());
-		return this.repo.saveAndFlush(exists);
+		exists.setFstop(lens.getFstop());
+		exists.setRange(lens.getRange());
+		exists.setBrand(lens.getBrand());
+		return this.repo.save(exists);
 	}
 
 	// DELETE
