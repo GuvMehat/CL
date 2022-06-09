@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.qa.camera.persistance.DTO.LensDTO;
+
 import com.qa.camera.persistance.domain.Lens;
 import com.qa.camera.service.LensService;
 
@@ -38,25 +38,25 @@ public class LensController {
 
 	// CREATE
 	@PostMapping("/create")
-	public ResponseEntity<LensDTO> create(@RequestBody Lens Lens) {
+	public ResponseEntity<Lens> create(@RequestBody Lens Lens) {
 		return new ResponseEntity<>(this.service.create(Lens), HttpStatus.CREATED);
 	}
 
 	// READ
 	@GetMapping("/read")
-	public ResponseEntity<List<LensDTO>> read() {
+	public ResponseEntity<List<Lens>> read() {
 		return new ResponseEntity<>(this.service.getAllLens(), HttpStatus.OK);
 	}
 
 	// READ BY ID
 	@GetMapping("/read/{id}")
-	public LensDTO readID(@PathVariable Long Id) throws Exception {
+	public Lens readID(@PathVariable Long Id) throws Exception {
 		return this.service.LensByID(Id);
 	}
 
 	// UPDATE
 	@PutMapping("/update/{id}")
-	public ResponseEntity<LensDTO> update(@PathVariable Long id, @RequestBody Lens Lens) throws Exception {
+	public ResponseEntity<Lens> update(@PathVariable Long id, @RequestBody Lens Lens) throws Exception {
 		return new ResponseEntity<>(this.service.update(id, Lens), HttpStatus.OK);
 	}
 

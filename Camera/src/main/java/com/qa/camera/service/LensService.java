@@ -48,7 +48,7 @@ public class LensService {
 		exists.setId(lens.getId());
 		exists.setFstop(lens.getFstop());
 		exists.setMount(lens.getMount());
-		return this.repo.saveAndFlush(exists));
+		return this.repo.saveAndFlush(exists);
 	}
 
 	// DELETE
