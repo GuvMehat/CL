@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Your Camera bag Lens Page</title>
+</head>
+<body>
+    <header>
+        <h1>Lens</h1>
+    </header>
+    <br>
+    <div class="container">
+        <h2>Add a Lens to your loadout:</h2>
+        <form id ="Lensform">
+                <label for="LenscreateId" class="form-label">Lens id:</label>
+                <input type="number" class="form-control" id="createId" placeholder="Enter ID number for Lens"> 
+
+            <br>
+				<label for="LensMount" class="form-label">Lens Mount:</label>
+				<input type="number" class="form-control" id="LensMount" placeholder="1=e 2=c"> 
+            <br>
+				<label for="LensFstop" class="form-label">Lens F stop:</label>
+                <input type="number" class="form-control" id="LensFstop" placeholder="apereture">
+            <br>
+				<label for="LensRange" class="form-label">Lens Range:</label>
+                <input type="number" class="form-control" id="LensRange" placeholder="zoom length">
+			<br>
+				<label for="LensBrand" class="form-label">Lens Brand:</label>
+                <input type="text" class="form-control" id="LensBrand" placeholder="sony/tamron">
+ 
+            <br>
+	
+            <button type="button" class="btn btn-primary" id ="LensSubmit">Create Lens</button> 
+        </form>
+        <br>
+    </div>
+    <br>
+    <div class ="container">
+        <h2>Show All Lens:</h2>
+        <button type="button" class="btn btn-primary" id ="showAllLensButton">Show all Lens</button> 
+        <br>
+        <br>
+        <div class ="container" id ="showAllLens"></div>
+        <br>
+    </div>
+    <br>
+    <div class ="container">
+        <h2>Read by Lens id: </h2>
+        <form id = "readByForm">
+            <label for="readId" class="form-label">Enter id:</label>
+            <input type="number" class="form-control" id="readId" placeholder="Lens ID"> 
+            <br>
+            <button type="button" class="btn btn-primary" id ="readByIdButton">Submit Lens id</button> 
+        </form>
+        <br>
+        <div class="container" id ="readByIdContainer"></div>
+        <br>
+    </div>
+    <br>
+    <div class ="container" id ="updateContainer">
+	
+    <h2>Update a Lens:</h2>
+        <form id = "updateLensForm">
+            <label for="updateId" class="form-label">What is the ID of the camera you want to update?:</label>
+            <input type="number" class="form-control" id="updateId" placeholder="Camera ID"> 
+            <br>
+            <br>
+				<label for="updateLensMount" class="form-label">Lens Mount:</label>
+				<input type="number" class="form-control" id="updateLensMount" placeholder="1=e 2=c"> 
+            <br>
+				<label for="updateLensFstop" class="form-label">Lens F stop:</label>
+                <input type="number" class="form-control" id="updateLensFstop" placeholder="apereture">
+            <br>
+				<label for="updateLensRange" class="form-label">Lens Range:</label>
+                <input type="number" class="form-control" id="updateLensRange" placeholder="zoom length">
+			<br>
+				<label for="updateLensBrand" class="form-label">Lens Brand:</label>
+                <input type="text" class="form-control" id="updateLensBrand" placeholder="sony/tamron">
+ 
+            <br>
+            
+            
+            <button type="button" class="btn btn-primary" id ="updateLensButton">Update Lens</button> 
+        </form>
+        <br>
+    </div>
+    <br>
+    <div class="container">
+    <h2>Delete  a Lens:</h2>
+        <form id = "deleteLensForm">
+            <label for="deleteLens" class="form-label">What is the ID of the Lens you want to delete?</label>
+            <input type="number" class="form-control" id="deleteLens" placeholder="Lens ID"> 
+            <br>
+            <button type="button" class="btn btn-primary" id ="deleteLensButton">DeleteLens</button> 
+            <br>
+        </form>
+        <br>
+    </div>
+    <footer>
+        <br>
+        <br>
+    </footer>
+    <script src ="./lens.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>     </select>
+</body>
+</html>
