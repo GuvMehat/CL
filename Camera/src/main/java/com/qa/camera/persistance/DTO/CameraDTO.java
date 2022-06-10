@@ -1,21 +1,21 @@
 package com.qa.camera.persistance.DTO;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
+//import lombok.Data;
+//import lombok.NoArgsConstructor;
 
-@Data
-@NoArgsConstructor
+//@Data
+//@NoArgsConstructor
 public class CameraDTO {
 	
-	private long id;
-
-	private String Brand;
-
-	private int Type;
-
-	private int Mount;
-	
-	
-	
-	
+//	private long id;
+//
+//	private String Brand;
+//
+//	private int Type;
+//
+//	private int Mount;
+//	
+//	
+//	
+//	
 }
