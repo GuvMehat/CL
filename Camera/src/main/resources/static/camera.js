@@ -94,7 +94,7 @@ let deleteCamera = (id) => {
     .catch((error) => console.log(error));
 };
 
-deleteCameraButton.onclick=() => deleteCamera(deletecamera.value);
+deleteCameraButton.onclick=() => deleteCamera( deletecamera.value);
 
 
 

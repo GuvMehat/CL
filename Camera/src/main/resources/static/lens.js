@@ -12,7 +12,7 @@ class lens{
 
 
 function createLens (id,brand, fstop,mount,range) {{
-  fetch(`http://localhost:8080/lens/create`), {
+  fetch(`http://localhost:8080/lens/create`, {
     method: "post",
     headers: {
         "content-Type": "application/json",
@@ -24,9 +24,9 @@ function createLens (id,brand, fstop,mount,range) {{
         "range":range,
         "mount": mount
   })
-
+  })
   .then((response) => { if (response.status == 201) { location.reload(); } console.log(response) })
-  .catch((error) => console.log(error)),
+  .catch((error) => console.log(error))
 }}
 
 LensSubmit.onclick =() => lensCamera(
@@ -103,4 +103,4 @@ let deletelens = () => {
     .catch((err) => console.error(`Stop! ${err}`));
 };
 deleteLensButton.onclick=() => deletecamera();
-}
+
