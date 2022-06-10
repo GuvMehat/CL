@@ -10,9 +10,9 @@ class camera{
 }
 
 
-function createcamera (id, brand, type,mount) {{
+function createCamera (id, brand, type,mount) {{
   fetch(`http://localhost:8080/camera/create`, {
-    method: "POST",
+    method: "post",
     headers: {
         "content-Type": "application/json",
       },
@@ -26,25 +26,31 @@ function createcamera (id, brand, type,mount) {{
   })
   .then((response) => { if (response.status == 201) { location.reload(); } console.log(response) })
   .catch((error) => console.log(error));
-    
+    console.log("added");
 }}
 
-CameraSubmit.onclick =() => createcamera(
+CameraSubmit.onclick =() => createCamera(
     createId.value,
     createName.value,
     createType.value,
     createMount.value,
 );
 
-showAllCamerasButton.onclick =(
-    fetch(`http://localhost:8080/camera/read`,
-    method: "GET",
-    headers: {
-        "content-Type": "application/json",
-      }
-    )
-
-)
+let readCamera =() => {
+  fetch('http://localhost:8080/camera/read')
+  .then((response) => {
+    if (response.status !== 200) {
+        console.error(`status: ${response.status}`);
+        return;
+    }
+    response.json().then((data) => {
+        console.log(response.status);
+        console.table(data);
+        addItem(data);
+    });
+}).catch((error) => console.error(`Request failed: ${error}`));
+}
+showAllCamerasButton.onclick =() => readCamera();
 
 let updatecamera = () => {
   fetch("http://localhost:8080/camera/update/" + cameraId.value, {

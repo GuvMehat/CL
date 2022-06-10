@@ -34,7 +34,7 @@ public class CameraController {
 	// A HOME PAGE
 	@GetMapping("/home")
 	public String home() {
-		return "home.html";
+		return "camera.html";
 	}
 
 	// CREATE
