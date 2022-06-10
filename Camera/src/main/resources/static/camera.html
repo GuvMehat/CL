@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Your Camera bag Camera Page</title>
+</head>
+<body>
+    <header>
+        <h1>Cameras</h1>
+    </header>
+    <br>
+    <div class="container">
+        <h2>Add a Camera to your loadout:</h2>
+        <form id ="Cameraform">
+                <label for="camcreateId" class="form-label">Camera id:</label>
+                <input type="number" class="form-control" id="createId" placeholder="Enter ID number for camera"> 
+
+            <br>
+				<label for="createName" class="form-label">Camera Brand:</label>
+				<input type="text" class="form-control" id="createName" placeholder="Sony/Canon/Nikon"> 
+            <br>
+				<label for="createType" class="form-label">Camera Type:</label>
+                <input type="number" class="form-control" id="createType" placeholder="1=Mirrorless 2=DLSR 3=8k">
+
+			<br>
+                <label for="createMount" class="form-label">Mount type:</label>
+                <input type="number" class="form-control" id="createMount" placeholder="1=E 2=EF 3=N1"> 
+
+ 
+            <br>
+	
+            <button type="button" class="btn btn-primary" id ="CameraSubmit">Create Camera</button> 
+        </form>
+        <br>
+    </div>
+    <br>
+    <div class ="container">
+        <h2>Show All Cameras:</h2>
+        <button type="button" class="btn btn-primary" id ="showAllCamerasButton">Show all cameras</button> 
+        <br>
+        <br>
+        <div class ="container" id ="showAllCamera"></div>
+        <br>
+    </div>
+    <br>
+    <div class ="container">
+        <h2>Read by Camera id: </h2>
+        <form id = "readByForm">
+            <label for="readId" class="form-label">Enter id:</label>
+            <input type="number" class="form-control" id="readId" placeholder="Camera ID"> 
+            <br>
+            <button type="button" class="btn btn-primary" id ="readByIdButton">Submit camera id</button> 
+        </form>
+        <br>
+        <div class="container" id ="readByIdContainer"></div>
+        <br>
+    </div>
+    <br>
+    <div class ="container" id ="updateContainer">
+	
+    <h2>Update a Camera:</h2>
+        <form id = "updateCameraForm">
+            <label for="updateId" class="form-label">What is the ID of the camera you want to update?:</label>
+            <input type="number" class="form-control" id="updateId" placeholder="Camera ID"> 
+            <br>
+            <label for="updateName" class="form-label">Enter the Brand of the camera</label>
+            <input type="text" class="form-control" id="updateName" placeholder="Brand"> 
+            <br>
+				<label for="camcreateType" class="form-label">Camera Type:</label>
+                <input type="number" class="form-control" id="updateId" placeholder="1=Mirrorless 2=DLSR 3=8k">
+			<br>
+                <label for="camcreateMount" class="form-label">Mount type:</label>
+                <input type="text" class="form-control" id="updateName" placeholder="1=E 2=EF 3=N1"> 
+            <br>
+            <button type="button" class="btn btn-primary" id ="updateCameraButton">Update Camera</button> 
+        </form>
+        <br>
+    </div>
+    <br>
+    <div class="container">
+    <h2>Delete  a Camera:</h2>
+        <form id = "deleteCameraForm">
+            <label for="deletecamera" class="form-label">What is the ID of the camera you want to delete?</label>
+            <input type="number" class="form-control" id="deletecamera" placeholder="Camera ID"> 
+            <br>
+            <button type="button" class="btn btn-primary" id ="deleteCameraButton">DeleteCamera</button> 
+            <br>
+        </form>
+        <br>
+    </div>
+    <footer>
+        <br>
+        <br>
+    </footer>
+    <script src ="./camera.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>     </select>
+</body>
+</html>

@@ -63,22 +63,22 @@ public class CameraServiceTest {
 		Mockito.verify(this.repo, Mockito.times(1)).findById(id);
 	}
 	
-//	@Test
-//	void updateTest() throws Exception { 
-//		final Long id = 1L;
-//		final Camera camera1 = new Camera();
-//		final Camera camera2 = new Camera();
-//		final CameraDTO cameraDTO = new CameraDTO();
-//
-//		Mockito.when(this.repo.findById(id)).thenReturn(Optional.of(camera1));
-//		Mockito.when(this.repo.saveAndFlush(camera2)).thenReturn(camera2);
-//
-//
-//		assertEquals(cameraDTO, this.service.update(id, camera1));
-//
-//		Mockito.verify(this.repo, Mockito.times(1)).findById(id);
-//		Mockito.verify(this.repo, Mockito.times(1)).saveAndFlush(camera2);
-//	}
+	@Test
+	void updateTest() throws Exception { 
+		final Long id = 1L;
+		final Camera camera1 = new Camera();
+		final Camera camera2 = new Camera();
+		final CameraDTO cameraDTO = new CameraDTO();
+
+		Mockito.when(this.repo.findById(id)).thenReturn(Optional.of(camera1));
+		Mockito.when(this.repo.saveAndFlush(camera2)).thenReturn(camera2);
+
+
+		assertEquals(cameraDTO, this.service.update(id, camera1));
+
+		Mockito.verify(this.repo, Mockito.times(1)).findById(id);
+		Mockito.verify(this.repo, Mockito.times(1)).saveAndFlush(camera2);
+	}
 	
 	@Test
 	void deleteTest() throws Exception {
